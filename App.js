@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <View style={twd`bg-slate-800 flex-1 items-center border-2`}>
+      <View style={twd`bg-[#030F26] flex-1 items-center border-2`}>
         <StatusBar style="light" />
         <Main />
       </View>
