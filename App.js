@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View} from 'react-native';
+import { View} from 'react-native';
 import twd from 'twrnc';
 import { Main } from './components/Main';
 import { SafeAreaProvider } from 'react-native-safe-area-context';

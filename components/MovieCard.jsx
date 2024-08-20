@@ -1,4 +1,5 @@
-import { Image, Text, View} from 'react-native';
+import { useEffect, useRef } from 'react';
+import { Animated, Image, Text, View} from 'react-native';
 import twd from 'twrnc';
 
 export function MovieCard({movie}) {
@@ -21,4 +22,23 @@ export function MovieCard({movie}) {
     </View>
   );
 
+}
+
+export function AnimatedMovieCard({movie, index}){
+
+    const opacidad = useRef(new Animated.Value(0)).current;
+    useEffect(() => {
+        Animated.timing(opacidad, {
+            toValue: 1,
+            duration: 1000,
+            delay: index * 250,
+            useNativeDriver: true,
+        }).start();
+    }, [opacidad, index]);
+
+    return (
+        <Animated.View style={{opacity: opacidad,}}>
+            <MovieCard movie={movie} />
+        </Animated.View>
+    );
 }
