@@ -18,7 +18,9 @@ export function Main() {
 
   return (
     <View style={twd`pt-[${insets.top}] pb-[${insets.bottom}] w-full`}>
-      <Text style={twd`text-white font-bold mx-4 text-4xl my-4`}>Now playing</Text>
+      <View style={twd`mb-4`}>
+        <Text style={twd`text-white font-bold mx-4 text-4xl`}>Now playing</Text>
+      </View>
       {/*Antes de cargas las peliculas, me muestra un indicador de carga*/}
       {movies.length === 0 ? (
         <ActivityIndicator />
@@ -29,7 +31,7 @@ export function Main() {
             renderItem={({item, index}) => 
               < AnimatedMovieCard movie={item} index={index}/>
             }
-            style={twd`mb-20`}
+            style={twd`h-full`}
         />
       )}
     </View>

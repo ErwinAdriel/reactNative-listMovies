@@ -30,7 +30,7 @@ export function AnimatedMovieCard({movie, index}){
     useEffect(() => {
         Animated.timing(opacidad, {
             toValue: 1,
-            duration: 1000,
+            duration: 2000,
             delay: index * 250,
             useNativeDriver: true,
         }).start();
