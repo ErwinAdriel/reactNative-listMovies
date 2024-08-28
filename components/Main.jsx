@@ -19,7 +19,7 @@ export function Main() {
   return (
     <View style={twd`pt-[${insets.top}] pb-[${insets.bottom}] w-full`}>
       <View style={twd`mb-4`}>
-        <Text style={twd`text-white font-bold mx-4 text-4xl`}>Now playing</Text>
+        <Text style={twd`text-white text-center font-bold mx-4 text-4xl`}>Movies</Text>
       </View>
       {/*Antes de cargas las peliculas, me muestra un indicador de carga*/}
       {movies.length === 0 ? (
