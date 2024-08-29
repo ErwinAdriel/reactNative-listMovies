@@ -12,7 +12,7 @@ export function MovieCard({movie}) {
                 <View style={twd`w-2/5 h-60`}>
                     <Image
                         source={{uri: movie.poster_path}}
-                        style={twd`size-full rounded-2xl	`}
+                        style={twd`size-full rounded-2xl`}
                     />
                 </View>
                 <View style={twd` w-3/5 pl-4`}>
