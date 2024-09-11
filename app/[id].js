@@ -27,7 +27,7 @@ import { StatusBar } from "expo-status-bar";
                     <View style={twd`items-center`}>
                         <StatusBar style="light" />
                         <Detail movie={movieDetail}/>
-                    
+
                         <Link href="/" style={twd`text-white text-2xl `}>Volver</Link>
                     </View>
                     
