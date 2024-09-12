@@ -8,7 +8,7 @@ export function Detail({movie}) {
     console.log(generos);
     
     return (
-        <View style={twd`w-full flex-1 items-center`}>
+        <View style={twd`bg-[#030F26] w-full flex-1 items-center`}>
             <View style={twd`w-auto h-auto `}>
                 <Image
                     source={{uri: movie.backdrop_path}}

@@ -5,7 +5,6 @@ import { useLocalSearchParams } from "expo-router";
 import { useState, useEffect } from "react";
 import { getMovieById } from "../lib/data";
 import { Detail } from "../components/Detail";
-import { StatusBar } from "expo-status-bar";
 
  export default function Detalle(){
 
@@ -25,7 +24,6 @@ import { StatusBar } from "expo-status-bar";
                     <ActivityIndicator />
                 ) : (
                     <View style={twd`items-center`}>
-                        <StatusBar style="light" />
                         <Detail movie={movieDetail}/>
 
                         <Link href="/" style={twd`text-white text-2xl `}>Volver</Link>
