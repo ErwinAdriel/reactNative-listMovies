@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { MainTv } from "../../components/MainTv";
 
-export function Tv(){
+export default function Tv(){
     return(
         <View>
-            <Text>TV</Text>
-        </View>
+            <MainTv />
+        </View> 
     )
 }
