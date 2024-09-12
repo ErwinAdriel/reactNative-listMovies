@@ -1,21 +1,23 @@
 import { Image, Text, View, FlatList} from 'react-native';
 import twd from 'twrnc';
+import { Screen } from './Screen';
+import { Link } from "expo-router";
 
 export function Detail({movie}) {
 
     const generos = movie.genres;
-
-    console.log(generos);
+    //console.log(generos);
     
     return (
-        <View style={twd`bg-[#030F26] w-full flex-1 items-center`}>
+        <Screen>
+            
             <View style={twd`w-auto h-auto `}>
                 <Image
                     source={{uri: movie.backdrop_path}}
                     style={twd`w-100 h-60`}
                 />
             </View>
-            <View style={twd`w-full border border-white`}>
+            <View style={twd`w-full mt-4 px-4 border border-white`}>
                 <Text style={twd`text-[#D93250] font-bold text-5xl`}>{movie.original_title}</Text>
                 <Text style={twd`text-white capitalize`}>{movie.release_date} | {movie.original_language}</Text>
                 <Text style={twd`text-white`}>{movie.overview}</Text>
@@ -27,7 +29,8 @@ export function Detail({movie}) {
                     }
                 />
             </View>
-        </View>
+            <Link href="/" style={twd`text-white text-2xl `}>Volver</Link>
+        </Screen>
     );
 
 }

@@ -1,7 +1,6 @@
 import { ScrollView, Text, View, ActivityIndicator} from "react-native";
 import twd from "twrnc";
-import { Link } from "expo-router";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, Stack } from "expo-router";
 import { useState, useEffect } from "react";
 import { getMovieById } from "../lib/data";
 import { Detail } from "../components/Detail";
@@ -21,12 +20,16 @@ import { Detail } from "../components/Detail";
         <View style={twd`flex-1 items-center`}>
             {
                 movieDetail === null ? (
-                    <ActivityIndicator />
+                    <ActivityIndicator color={"#fff"} size={"large"}/>
                 ) : (
                     <View style={twd`items-center`}>
+                        <Stack.Screen
+                            options={{
+                                headerTintColor: "#D93250",
+                                headerLeft: () => {},
+                            }}
+                        />
                         <Detail movie={movieDetail}/>
-
-                        <Link href="/" style={twd`text-white text-2xl `}>Volver</Link>
                     </View>
                     
                 )

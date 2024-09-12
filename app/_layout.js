@@ -6,12 +6,12 @@ import twd from "twrnc";
 import { Logo } from "../components/Logo";
 
 export default function Layout(){
-    const insets = useSafeAreaInsets();
+    //const insets = useSafeAreaInsets();
 
     return(
         <SafeAreaProvider>
             <View style={twd`flex-1`}>
-            < Stack 
+            <Stack 
                 screenOptions={{
                     headerStyle: {backgroundColor: "#030F26"},
                     headerTintColor: "white",

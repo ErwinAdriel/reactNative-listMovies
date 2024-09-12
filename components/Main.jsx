@@ -4,6 +4,7 @@ import { Text, View, FlatList, ScrollView, ActivityIndicator } from 'react-nativ
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import twd from 'twrnc';
 import { AnimatedMovieCard } from './MovieCard';
+import { Screen } from './Screen';
 
 export function Main() {
 
@@ -17,8 +18,7 @@ export function Main() {
   }, []);
 
   return (
-    <View style={twd`bg-[#030F26] w-full`}>
-      
+    <Screen>
       {/*Antes de cargas las peliculas, me muestra un indicador de carga*/}
       {movies.length === 0 ? (
         <ActivityIndicator />
@@ -32,6 +32,6 @@ export function Main() {
             style={twd`h-full`}
         />
       )}
-    </View>
+    </Screen>
   );
 }
