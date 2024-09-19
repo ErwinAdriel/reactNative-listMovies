@@ -1,16 +1,16 @@
 import { Image, Text, View, FlatList} from 'react-native';
 import twd from 'twrnc';
 import { Screen } from './Screen';
-import { Link } from "expo-router";
+import { Genero } from './Genero';
 
 export function Detail({movie}) {
 
     const generos = movie.genres;
     //console.log(generos);
     
+    
     return (
-        <Screen>
-            
+        <Screen>     
             <View style={twd`w-auto h-auto `}>
                 <Image
                     source={{uri: movie.backdrop_path}}
@@ -18,18 +18,19 @@ export function Detail({movie}) {
                 />
             </View>
             <View style={twd`w-full mt-4 px-4 border border-white`}>
+                <Text style={twd`text-white capitalize`}>Movie</Text>
                 <Text style={twd`text-[#D93250] font-bold text-5xl`}>{movie.original_title}</Text>
-                <Text style={twd`text-white capitalize`}>{movie.release_date} | {movie.original_language}</Text>
-                <Text style={twd`text-white`}>{movie.overview}</Text>
                 <FlatList 
                     data={generos}
                     keyExtractor={genero => genero.name}
                     renderItem={({item}) => 
-                        <Text key={item.id} style={twd`text-white`}>{item.name}</Text>
+                        < Genero genero={item} />
                     }
                 />
+                <Text style={twd`text-white capitalize`}>{movie.release_date} | {movie.original_language}</Text>
+                <Text style={twd`text-white`}>{movie.overview}</Text>
+                
             </View>
-            <Link href="/" style={twd`text-white text-2xl `}>Volver</Link>
         </Screen>
     );
 

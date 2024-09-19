@@ -17,7 +17,7 @@ import { Detail } from "../components/Detail";
     }, [id]);
 
     return(
-        <View style={twd`flex-1 items-center`}>
+        <View style={twd`flex-1 items-center`}>  
             {
                 movieDetail === null ? (
                     <ActivityIndicator color={"#fff"} size={"large"}/>
@@ -31,7 +31,6 @@ import { Detail } from "../components/Detail";
                         />
                         <Detail movie={movieDetail}/>
                     </View>
-                    
                 )
             }
         </View>

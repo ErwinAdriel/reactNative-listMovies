@@ -9,7 +9,6 @@ import { Screen } from './Screen';
 export function Main() {
 
   const [movies, setMovies] = useState([]);
-  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     getMovies().then((movies) => {
@@ -18,8 +17,9 @@ export function Main() {
   }, []);
 
   return (
+    
     <Screen>
-      {/*Antes de cargas las peliculas, me muestra un indicador de carga*/}
+      {/*Antes de cargar las peliculas, me muestra un indicador de carga*/}
       {movies.length === 0 ? (
         <ActivityIndicator />
       ) : (
