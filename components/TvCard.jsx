@@ -3,10 +3,14 @@ import { useEffect, useRef } from 'react';
 import { Animated, Image, Text, View, Pressable} from 'react-native';
 import twd from 'twrnc';
 
-export function MovieCard({movie, tv}) {
+export function TvCard({isMovie}) {
 
-  return (
-    <Link href={`/${movie.id}`} asChild>
+    if(isMovie){
+        return <Text style={twd`text-white`}>Movie</Text>
+    }
+    return (
+        <Text style={twd`text-white`}>TV</Text>
+    /*<Link href={`/${tv.id}`} asChild>
         <Pressable>
             <View key={movie.id} style={twd`mb-4 mx-4 flex flex-row items-center`}>
                 <View style={twd`w-2/5 h-60`}>
@@ -24,11 +28,11 @@ export function MovieCard({movie, tv}) {
                 </View>
             </View>
         </Pressable>
-    </Link>
-  );
+    </Link>*/
+  )
 }
 
-export function AnimatedMovieCard({movie, index}){
+/*export function AnimatedMovieCard({movie, index}){
 
     const opacidad = useRef(new Animated.Value(0)).current;
     useEffect(() => {
@@ -45,4 +49,4 @@ export function AnimatedMovieCard({movie, index}){
             <MovieCard movie={movie} />
         </Animated.View>
     );
-}
+}*/
