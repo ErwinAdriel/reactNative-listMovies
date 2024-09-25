@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Animated, Image, Text, View, Pressable} from 'react-native';
 import twd from 'twrnc';
 
-export function MovieCard({movie, tv}) {
+export function MovieCard({movie}) {
 
   return (
     <Link href={`/${movie.id}`} asChild>

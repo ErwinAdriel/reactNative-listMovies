@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { getMovieById } from "../lib/data";
 import { Detail } from "../components/Detail";
 
- export default function Detalle(){
+export default function Detalle(){
 
     const { id } = useLocalSearchParams(); 
     const [movieDetail, setMovieDetail] = useState([null]);

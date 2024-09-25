@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { Text, View, FlatList, ScrollView, ActivityIndicator } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import twd from 'twrnc';
+import { AnimatedTvCard } from './TvCard';
 import { Screen } from './Screen';
-import { TvCard } from './TvCard';
 
 
 export function MainTv(){
@@ -23,7 +23,14 @@ export function MainTv(){
             {tvs.length === 0 ? (
                 <ActivityIndicator />
             ) : (
-                <TvCard isMovie={true} />
+                <FlatList 
+                    data={tvs}
+                    keyExtractor={tv => tv.id}
+                    renderItem={({item, index}) => 
+                    < AnimatedTvCard tv={item} index={index}/>
+                    }
+                    style={twd`h-full`}
+                />
             )}
         </Screen>
     )
